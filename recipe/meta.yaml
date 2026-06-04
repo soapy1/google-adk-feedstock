@@ -1,5 +1,5 @@
 {% set name = "google-adk" %}
-{% set version = "1.33.0" %}
+{% set version = "2.1.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/google_adk-{{ version }}.tar.gz
-  sha256: 2fe6f8c3d02307e3763999649378620457f294ebbce62fddf4162cddca43db32 
+  sha256: fd1709bf5e70e5aaa7d148c7b788d2cd00bb659ee10505a731bb2ad609d28968
 build:
   noarch: python
   entry_points:
@@ -22,11 +22,13 @@ requirements:
     - flit-core >=3.8,<4
     - pip
   run:
+    - packaging >=21
+    - python-multipart >=0.0.9,<1
     - python >={{ python_min }}
     - aiosqlite >=0.21
     - anyio >=4.9,<5
     - authlib >=1.6.6,<2
-    - click >=8.1.8,<9.0.0
+    - click >=8.1.8,<9
     - fastapi >=0.124.1,<1
     - google-api-python-client >=2.157.0,<3.0.0
     - google-auth >=2.47
@@ -41,7 +43,7 @@ requirements:
     - google-cloud-speech >=2.30.0,<3.0.0
     - google-cloud-spanner >=3.56.0,<4.0.0
     - google-cloud-storage >=2.18.0,<4.0.0
-    - google-genai >=1.72.0,<2.0.0
+    - google-genai >=1.72,<2
     - httpx >=0.27,<1
     - jsonschema >=4.23,<5
     - mcp >=1.24.0,<2
@@ -53,21 +55,21 @@ requirements:
     - opentelemetry-resourcedetector-gcp >=1.9.0a0,<2
     - opentelemetry-sdk >=1.36,<=1.41.1
     - pyarrow >=14
-    - pydantic >=2.12,<3.0.0
+    - pydantic >=2.12,<3
     - python-dateutil >=2.9.0.post0,<3.0.0
-    - python-dotenv >=1.0.0,<2.0.0
-    - python-graphviz >=0.20.2,<1.0.0
-    - pyyaml >=6.0.2,<7.0.0
-    - requests >=2.32.4,<3.0.0
+    - python-dotenv >=1,<2
+    - python-graphviz >=0.20.2,<1
+    - pyyaml >=6.0.2,<7
+    - requests >=2.32.4,<3
     - sqlalchemy >=2.0,<3.0.0
     - sqlalchemy-spanner >=1.14.0
-    - starlette >=0.49.1,<1.0.0
+    - starlette >=0.49.1,<1
     - tenacity >=9,<10
     - typing_extensions >=4.5,<5
-    - tzlocal >=5.3,<6.0
-    - uvicorn >=0.34.0,<1.0.0
-    - watchdog >=6.0.0,<7.0.0
-    - websockets >=15.0.1,<16.0.0
+    - tzlocal >=5.3,<6
+    - uvicorn >=0.34,<1
+    - watchdog >=6,<7
+    - websockets >=15.0.1,<16
 
 test:
   imports:
