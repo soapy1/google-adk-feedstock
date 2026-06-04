@@ -1,5 +1,5 @@
 {% set name = "google-adk" %}
-{% set version = "1.14.1" %}
+{% set version = "1.33.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,8 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/google_adk-{{ version }}.tar.gz
-  sha256: 06caab4599286123eceb9348e4accb6c3c1476b8d9b2b13f078a975c8ace966f
-
+  sha256: 2fe6f8c3d02307e3763999649378620457f294ebbce62fddf4162cddca43db32 
 build:
   noarch: python
   entry_points:
@@ -23,38 +22,52 @@ requirements:
     - flit-core >=3.8,<4
     - pip
   run:
-    - sqlalchemy-spanner >=1.14.0
-    - google-cloud-bigtable >=2.32.0
-    - google-cloud-spanner >=3.56.0,<4.0.0
-    - absolufy-imports >=0.3.1,<1.0.0
-    - tenacity >=8.0.0,<9.0.0
-    - watchdog >=6.0.0,<7.0.0
-    - python-dateutil >=2.9.0.post0,<3.0.0
-    - requests >=2.32.4,<3.0.0
-    - starlette >=0.46.2,<1.0.0
-    - websockets >=15.0.1,<16.0.0
-    - typing_extensions >=4.5,<5
     - python >={{ python_min }}
-    - authlib >=1.5.1,<2.0.0
+    - aiosqlite >=0.21
+    - anyio >=4.9,<5
+    - authlib >=1.6.6,<2
     - click >=8.1.8,<9.0.0
-    - fastapi >=0.115.0,<1.0.0
+    - fastapi >=0.124.1,<1
     - google-api-python-client >=2.157.0,<3.0.0
-    - google-cloud-aiplatform >=1.95.1,<2.0.0
+    - google-auth >=2.47
+    - google-cloud-aiplatform >=1.148.1,<2
+    - google-cloud-bigquery >=2.2
+    - google-cloud-bigquery-storage >=2
+    - google-cloud-bigtable >=2.32.0
+    - google-cloud-dataplex >=1.7,<3
+    - google-cloud-discoveryengine >=0.13.12,<0.14
+    - google-cloud-pubsub >=2,<3
     - google-cloud-secret-manager >=2.22.0,<3.0.0
     - google-cloud-speech >=2.30.0,<3.0.0
-    - google-cloud-storage >=2.18.0,<3.0.0
-    - google-genai >=1.21.1,<2.0.0
-    - python-graphviz >=0.20.2,<1.0.0
-    - mcp >=1.5.0
-    - opentelemetry-api >=1.31.0,<2.0.0
+    - google-cloud-spanner >=3.56.0,<4.0.0
+    - google-cloud-storage >=2.18.0,<4.0.0
+    - google-genai >=1.72.0,<2.0.0
+    - httpx >=0.27,<1
+    - jsonschema >=4.23,<5
+    - mcp >=1.24.0,<2
+    - opentelemetry-api >=1.36,<=1.41.1
+    - opentelemetry-exporter-gcp-logging >=1.9.0a0,<=1.12.0a0
+    - opentelemetry-exporter-gcp-monitoring >=1.9.0a0,<2
     - opentelemetry-exporter-gcp-trace >=1.9.0,<2.0.0
-    - opentelemetry-sdk >=1.31.0,<2.0.0
-    - pydantic >=2.0,<3.0.0
+    - opentelemetry-exporter-otlp-proto-http >=1.36
+    - opentelemetry-resourcedetector-gcp >=1.9.0a0,<2
+    - opentelemetry-sdk >=1.36,<=1.41.1
+    - pyarrow >=14
+    - pydantic >=2.12,<3.0.0
+    - python-dateutil >=2.9.0.post0,<3.0.0
     - python-dotenv >=1.0.0,<2.0.0
+    - python-graphviz >=0.20.2,<1.0.0
     - pyyaml >=6.0.2,<7.0.0
+    - requests >=2.32.4,<3.0.0
     - sqlalchemy >=2.0,<3.0.0
+    - sqlalchemy-spanner >=1.14.0
+    - starlette >=0.49.1,<1.0.0
+    - tenacity >=9,<10
+    - typing_extensions >=4.5,<5
     - tzlocal >=5.3,<6.0
     - uvicorn >=0.34.0,<1.0.0
+    - watchdog >=6.0.0,<7.0.0
+    - websockets >=15.0.1,<16.0.0
 
 test:
   imports:
