@@ -1,5 +1,5 @@
 {% set name = "google-adk" %}
-{% set version = "2.7.1" %}
+{% set version = "2.8.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/google_adk-{{ version }}.tar.gz
-  sha256: 0485bfba1a04960a3784eb67531491475be1a3f8acefcc5c880a906857ecb3e2
+  sha256: f51524e18cf0a0cdeb4fdd6f0fa16f31bc5e53021647b3e6c72a90f40f583915
 build:
   noarch: python
   entry_points:
@@ -44,7 +44,7 @@ requirements:
     - google-cloud-speech >=2.30.0,<3.0.0
     - google-cloud-spanner >=3.56.0,<4.0.0
     - google-cloud-storage >=2.18.0,<4.0.0
-    - google-genai >=2.12.1,<3
+    - google-genai >=2.19,<3
     - httpx >=0.27,<1
     - jsonschema >=4.23,<5
     - mcp >=1.24.0,<2
